@@ -56,7 +56,7 @@ trigger: null,
 // The ISO language code (built-in: en-US)
 language: '',
 // The date string format
-format: 'mmm yyyy',
+format: 'mm yyyy',
 // The initial date
 date: null,
 // The start view date
