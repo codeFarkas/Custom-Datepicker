@@ -63,12 +63,6 @@ weekStart: 0,
 yearFirst: false,
 // A string suffix to the year number.
 yearSuffix: '',
-// Days' name of the week.
-days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-// Shorter days' name
-daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-// Shortest days' name
-daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
 // Months' name
 months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 // Shorter months' name
@@ -175,10 +169,6 @@ format = {
 };
 $.each(parts, function (i, part) {
  switch (part) {
-   case 'dd':
-   case 'd':
-     format.hasDay = true;
-     break;
 
    case 'mm':
    case 'm':
