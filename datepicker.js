@@ -1,4 +1,3 @@
-<script>
 
 (function (global, factory) {
 typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('jquery')) :
@@ -1513,4 +1512,3 @@ $.fn.datepicker.noConflict = function noConflict() {
 
 })));
 
-</script>
