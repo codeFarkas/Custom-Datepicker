@@ -361,39 +361,6 @@ getMonthName: function getMonthName(month, shortForm) {
 },
 
 /**
-* Get the day name with given argument or the current date
-*
-* @param {Number} day (optional)
-* @param {Boolean} shortForm (optional)
-* @param {Boolean} min (optional)
-* @return {String} (day name)
-*/
-getDayName: function getDayName(day, shortForm, min) {
- var options = this.options;
- var days = options.days;
-
- if ($.isNumeric(day)) {
-   day = Number(day);
- } else {
-   if (isUndefined(min)) {
-     min = shortForm;
-   }
-
-   if (isUndefined(shortForm)) {
-     shortForm = day;
-   }
- }
-
- if (min) {
-   days = options.daysMin;
- } else if (shortForm) {
-   days = options.daysShort;
- }
-
- return days[isNumber(day) ? day : this.date.getDay()];
-},
-
-/**
 * Get the current date
 *
 * @param {Boolean} formatted (optional)
@@ -508,23 +475,14 @@ parseDate: function parseDate(date) {
            date.setMonth(value - 1);
            break;
        }
-     }); // Set day in the last to avoid converting `31/10/2019` to `01/10/2019`
-
-     $.each(parts, function (i, part) {
-       var value = parseInt(part, 10);
-
-       switch (format.parts[i]) {
-         case 'dd':
-         case 'd':
-           date.setDate(value);
-           break;
+     
        }
      });
    }
  } // Ignore hours, minutes, seconds and milliseconds to avoid side effect (#192)
 
 
- return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+ return new Date(date.getFullYear(), date.getMonth());
 },
 
 /**
